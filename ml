@@ -13,7 +13,7 @@ url = "https://drive.google.com/uc?id=1w-4vVxwSbhvIdU-ayfxa8_BypFP7VXKo&export=d
 df = pd.read_csv(url)
 
 print("="*50)
-print("📊 資料前五筆")
+print("資料前五筆")
 print("="*50)
 print(df.head())
 
@@ -46,7 +46,7 @@ y_pred = lr.predict(X_test)
 # 相容版本 RMSE 計算
 rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 print("\n" + "="*50)
-print("🎯 監督式學習結果 (Linear Regression)")
+print("監督式學習結果 (Linear Regression)")
 print("="*50)
 print(f"RMSE: {rmse:.2f}")
 
@@ -58,7 +58,7 @@ clusters = kmeans.fit_predict(X_scaled)
 
 df['cluster'] = clusters
 print("\n" + "="*50)
-print("🔍 非監督式學習結果 (KMeans 分群)")
+print("非監督式學習結果 (KMeans 分群)")
 print("="*50)
 print(df[['student_id','cluster']].head())
 
@@ -67,6 +67,6 @@ print(df[['student_id','cluster']].head())
 # -------------------------------
 cluster_summary = df.groupby('cluster').mean(numeric_only=True)
 print("\n" + "="*50)
-print("📌 各群平均特徵")
+print("各群平均特徵")
 print("="*50)
 print(cluster_summary)
